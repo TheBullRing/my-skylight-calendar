@@ -96,6 +96,21 @@ Since Home Assistant updates, Holidays are now added via UI:
     * **Weather:** Replace `weather.home` with your weather provider.
     * **Background:** Update the image URL at the bottom of the yaml.
 
+### Step 5: The Theme (Optional)
+To get the specific font look (Ovo):
+1.  Ensure your `configuration.yaml` has this line under `frontend:`
+    ```yaml
+    frontend:
+      themes: !include_dir_merge_named themes
+    ```
+2.  Create a folder named `themes` in your config directory.
+3.  Download [themes/skylight.yaml](themes/skylight.yaml) and place it in that folder.
+4.  Restart Home Assistant.
+5.  Go to your Profile (User Icon bottom left) and change **Theme** to `Skylight`.
+NOTE: The theme is not comprehensive, so keep that in mind
+
+
+
 ---
 
 ## 📐 How It Works (Under the Hood)
@@ -125,4 +140,5 @@ choose:
 My original post was just to give a high level overview of how to do it and allow people to adjust code to make it work in their specific scenarios.
 In particular I did this because every display and need is different. I can't develop for all potential sizes of displays, dashboards, etc. So it is built to work in the display I mentioned or any (1920x1080) but should be editable for others.
 Talking about display, I originally suggested that one because it was on sale at Woot and was a very economic way to get a touchscreen display at the time. This might not be the case now, so use whatever display works for you. Tablet, touchscreen, phone, whatever. The main thing youll need to edit is the dashboard.
+
 
