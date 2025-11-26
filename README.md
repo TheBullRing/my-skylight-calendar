@@ -1,6 +1,7 @@
 # DIY Smart Home Family Calendar (Skylight Clone)
 
-![Main Dashboard View](assets/main_view.jpeg)
+![Sklylight calendar](assets/main_view.jpeg)
+![DIY Skylight](assets/sky2.png)
 
 ## 📖 Introduction
 My wife has been recently bombarded in social media with ads for smart home calendars (Skylight, Cozyla, Hearth) and was ready to spend over $300 on one. Before giving her the green light, I asked for a chance to research them.
@@ -17,10 +18,15 @@ Choosing the DIY route with Home Assistant provided several benefits over buying
 * **Privacy:** No vendor lock-in or risk of the company shutting down.
 
 ## 🛠 Hardware Selection
-The only essential purchase was the screen. It needed to be touch-enabled and aesthetically pleasing for a countertop.
+This is currently built to show the dashboard on any HD (1920x1080) display.
 
+In my case, the requirement was for it to "look like" skylight, be touchscreen, be countertop, possibility to move it to different locations. Therefore I went with the hardware described below.
+Nevertheless, you case might be different and will need you to adjust it as needed, for example if you want to display it on a tablet or something else.
+
+The hardware I originally used I chose based on what I mentioned above plus with the hope to be able to extend functionality using the webcam, speaker and microphone. Currently I would probably build it differently now in hindsight, since I havent had time to address these additional hardware ideas.
 * **Monitor:** [HP Engage 15-inch Touchscreen](https://computers.woot.com/offers/hp-engage-16t-fhd-monitor). I chose this over generic portable monitors because it includes a built-in **Speaker, Webcam, and Microphone**, allowing for future voice control or video calls.
-* **Compute:** An old Mini PC (NUC/Tiny PC) running Windows/Linux in Kiosk mode, or a Raspberry Pi 4.
+* **Compute:** An old Mini PC (NUC/Tiny PC) running Windows/Linux in Kiosk mode, or a Raspberry Pi 4.~~
+
 
 ## ✨ Features
 * **Family-wide & Individual Views:** Toggle specific family members' calendars on/off.
@@ -60,6 +66,7 @@ You must have [HACS](https://hacs.xyz/) installed. Please install the following 
 You can use **Google Calendars** or **Local Calendars**.
 
 **Option A: Local Calendar (Easiest)**
+Note this is untested since I use Google Calendars exclusively
 1.  Go to **Settings > Devices & Services**.
 2.  Add the **Local Calendar** integration.
 3.  Create calendars named exactly: `Alice`, `Bob`, `Charlie`, `Daisy`, `Family`.
@@ -111,4 +118,11 @@ choose:
   - conditions: "All Day Event is OFF"
     action: calendar.create_event (start_date_time, end_date_time)
 ```    
+
+
+
+# NOTES
+My original post was just to give a high level overview of how to do it and allow people to adjust code to make it work in their specific scenarios.
+In particular I did this because every display and need is different. I can't develop for all potential sizes of displays, dashboards, etc. So it is built to work in the display I mentioned or any (1920x1080) but should be editable for others.
+Talking about display, I originally suggested that one because it was on sale at Woot and was a very economic way to get a touchscreen display at the time. This might not be the case now, so use whatever display works for you. Tablet, touchscreen, phone, whatever. The main thing youll need to edit is the dashboard.
 
