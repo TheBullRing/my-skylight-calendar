@@ -3,6 +3,7 @@ views:
     max_columns: 10
     title: Family Calendar
     path: family-calendar
+    theme: Skylight
     sections:
       # --- START HEADER SECTION (Date & Weather) ---
       - type: grid
