@@ -93,6 +93,10 @@ You must have [HACS](https://hacs.xyz/) installed. Please install the following 
 * `layout-card` (Required for the Sections view)
 * `button-card` (Required for the popup to add event)
 
+*Note: In Settings → Devices & Services, make sure Browser Mod appears as an Integration (tile) and not only under HACS. 
+If it isn’t there, click Add Integration → Browser Mod and finish the flow, then restart HA.
+Installing via HACS only downloads files; you must add the integration so HA registers its actions/entities.
+
 ### 2. The Backend (The Brains)
 
 1. Open your `configuration.yaml` file in Home Assistant.
